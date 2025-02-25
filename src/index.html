@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav-links">
+        <a href="#">Информация</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="#">Домой</a>
+      </nav>
+    </header>
+
+    <div class="card">
+      <div class="wrapper">
+        <form action="">
+          <h1>heartbeat</h1>
+          <div class="btn">
+            <button type="button" class="regist">Создать аккаунт</button>
+            <button type="button" class="login">Вход</button>
+          </div>
+        </form>
+        <div class="usl">
+          <p>Нажимая продолжить вы принимаете</p>
+          <a href="#">Условия Соглашения</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Вход -->
+    <div id="modal-login" class="modal">
+      <div class="modal-container_log">
+        <span class="close">&times;</span>
+        <h2>Вход</h2>
+        <form action="">
+          <div class="log-cont">
+            <input type="text" placeholder="Имя пользователя" required />
+            <input type="password" placeholder="Пароль" required />
+            <button type="submit" class="login-button">Войти</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Рег 1 -->
+    <div id="modal-register" class="modal">
+      <div class="modal-container_reg_one">
+        <span class="close">&times;</span>
+        <h2>Регистрация</h2>
+        <form id="registration-form">
+          <div class="reg">
+            <input type="text" id="name" placeholder="Имя" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input
+              type="password"
+              id="password"
+              placeholder="Пароль"
+              required
+            />
+            <div class="checkbox_label">
+              <input type="checkbox" id="terms" required />
+              <p>
+                Я ознакомился и принимаю <a href="#"> Условия Соглашения</a>
+              </p>
+            </div>
+            <button type="submit" class="next-button">></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Рег 2 -->
+    <div id="modal-register-additional" class="modal">
+      <div class="modal-container_reg_two">
+        <span class="close">&times;</span>
+        <form id="registration-additional-form">
+          <div class="reg-additional">
+            <h2>Немного о себе</h2>
+            <label class="file-input-container">
+              <input type="file" id="photo" accept="image/*" required />
+            </label>
+            <select id="gender" class="input-field" required>
+              <option value="" disabled selected>Выберите пол</option>
+              <option value="male">Мужской</option>
+              <option value="female">Женский</option>
+            </select>
+            <input type="date" id="birthdate" class="input-field" required />
+            <input
+              type="text"
+              id="telegram"
+              placeholder="t.me/никнейм"
+              pattern="^t\.me\/[A-Za-z0-9_]{5,32}$"
+              class="input-field"
+              required
+            />
+            <button type="submit" class="next-button">></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Рег 3 -->
+
+    <div id="modal-register-hobby" class="modal">
+      <div class="modal-container_reg_three">
+        <span class="close">&times;</span>
+        <form id="registration-hobby-form">
+          <div class="reg-hobby">
+            <h2>Дополнительная информация</h2>
+
+            <!-- Семейное положение -->
+            <div class="input-group">
+              <label for="marital-status">Семейное положение:</label>
+              <select id="marital-status" required>
+                <option value="" disabled selected>
+                  Выберите семейное положение
+                </option>
+                <option value="single">Холост/Не замужем</option>
+                <option value="married">Женат/Замужем</option>
+                <option value="divorced">Разведен/Разведена</option>
+                <option value="widowed">Вдовец/Вдова</option>
+              </select>
+            </div>
+
+            <!-- Хобби -->
+            <div class="checkbox-group">
+              <h3>Ваши хобби:</h3>
+              <div class="hobby_columns">
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="reading" />
+                  <span>Чтение</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="sports" />
+                  <span>Спорт</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="music" />
+                  <span>Музыка</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="traveling" />
+                  <span>Путешествия</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="cooking" />
+                  <span>Кулинария</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="gaming" />
+                  <span>Игры</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="art" />
+                  <span>Искусство</span>
+                </label>
+                <label class="checkbox_label">
+                  <input type="checkbox" name="hobbies" value="other" />
+                  <span>Программирование</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Описание о себе -->
+            <div class="input-group">
+              <label class="infa__max" for="self-description"
+                >Расскажите о себе (максимум 150 символов):</label
+              >
+              <textarea
+                class="input-group__textarea"
+                id="self-description"
+                maxlength="150"
+                placeholder="Ваше описание..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="start-button">Начать общение</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
